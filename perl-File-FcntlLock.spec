@@ -58,3 +58,33 @@ rm -rf %buildroot
 %perl_vendorlib/*
 
 
+
+
+%changelog
+* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-6mdv2012.0
++ Revision: 765239
+- rebuilt for perl-5.14.2
+
+* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-5
++ Revision: 763752
+- rebuilt for perl-5.14.x
+
+* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-4
++ Revision: 667139
+- mass rebuild
+
+* Sun Aug 01 2010 Funda Wang <fwang@mandriva.org> 0.120.0-3mdv2011.0
++ Revision: 564434
+- rebuild for perl 5.12.1
+
+* Tue Jul 20 2010 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-2mdv2011.0
++ Revision: 555251
+- rebuild
+
+* Wed Dec 30 2009 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-1mdv2010.1
++ Revision: 483878
+- import perl-File-FcntlLock
+
+
+* Wed Dec 30 2009 cpan2dist 0.12-1mdv
+- initial mdv release, generated with cpan2dist
