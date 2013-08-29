@@ -1,23 +1,20 @@
-%define upstream_name    File-FcntlLock
-%define upstream_version 0.12
+%define modname	File-FcntlLock
+%define modver	0.12
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 7
-
-Summary:    File locking with fcntl()
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/File/%{upstream_name}-%{upstream_version}.tar.gz
-
-BuildRequires: perl(Carp)
-BuildRequires: perl(DynaLoader)
-BuildRequires: perl(Errno)
-BuildRequires: perl(Exporter)
-BuildRequires: perl(POSIX)
-BuildRequires: perl-devel
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
+Summary:	File locking with fcntl()
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	7
+License:	GPLv2+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
+BuildRequires:	perl(Carp)
+BuildRequires:	perl(DynaLoader)
+BuildRequires:	perl(Errno)
+BuildRequires:	perl(Exporter)
+BuildRequires:	perl(POSIX)
+BuildRequires:	perl-devel
 
 %description
 File locking in Perl is usually done using the the flock() manpage
@@ -34,57 +31,20 @@ set or it can be determined if and which process currently holds the lock.
 To create a new object representing a flock structure call 'new()':
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
-
-%{make}
+%__perl Makefile.PL INSTALLDIRS=vendor
+%make
 
 %check
-%{make} test
+%make test
 
 %install
-rm -rf %buildroot
 %makeinstall_std
 
-%clean
-rm -rf %buildroot
-
 %files
-%defattr(-,root,root)
 %doc README Changes
+%{perl_vendorlib}/*
 %{_mandir}/man3/*
-%perl_vendorlib/*
 
-
-
-
-%changelog
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-6mdv2012.0
-+ Revision: 765239
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-5
-+ Revision: 763752
-- rebuilt for perl-5.14.x
-
-* Wed May 04 2011 Oden Eriksson <oeriksson@mandriva.com> 0.120.0-4
-+ Revision: 667139
-- mass rebuild
-
-* Sun Aug 01 2010 Funda Wang <fwang@mandriva.org> 0.120.0-3mdv2011.0
-+ Revision: 564434
-- rebuild for perl 5.12.1
-
-* Tue Jul 20 2010 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-2mdv2011.0
-+ Revision: 555251
-- rebuild
-
-* Wed Dec 30 2009 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-1mdv2010.1
-+ Revision: 483878
-- import perl-File-FcntlLock
-
-
-* Wed Dec 30 2009 cpan2dist 0.12-1mdv
-- initial mdv release, generated with cpan2dist
