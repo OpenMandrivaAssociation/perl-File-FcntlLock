@@ -1,14 +1,15 @@
 %define modname	File-FcntlLock
-%define modver 0.14
+%define modver 0.20
 
 Summary:	File locking with fcntl()
+
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/File/File-FcntlLock-%{modver}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(DynaLoader)
 BuildRequires:	perl(Errno)
@@ -47,5 +48,6 @@ To create a new object representing a flock structure call 'new()':
 %doc README Changes
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
+
 
 
