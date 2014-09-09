@@ -1,5 +1,6 @@
 removed_sources:
   File-FcntlLock-0.12.tar.gz: 9f9b25582ccba734ecb384db46a067e39e0fd11a
   File-FcntlLock-0.14.tar.gz: 40cdf9a5109be31781e77f9cba6553667e9e4e66
-sources:
   File-FcntlLock-0.20.tar.gz: dda3f083fa11594aad000ee46a14b4e7187e0fc6
+sources:
+  File-FcntlLock-0.22.tar.gz: 4554094587cdb88ab68d149701e57364be63bf37

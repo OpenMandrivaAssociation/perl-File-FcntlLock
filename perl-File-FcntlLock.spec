@@ -1,5 +1,5 @@
 %define modname	File-FcntlLock
-%define modver 0.20
+%define modver 0.22
 
 Summary:	File locking with fcntl()
 
