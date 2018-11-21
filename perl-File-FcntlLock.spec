@@ -11,6 +11,7 @@ Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
 BuildRequires:	perl(Test::More)
+BuildRequires:	perl(Test)
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(DynaLoader)
 BuildRequires:	perl(Errno)
