@@ -10,7 +10,7 @@ License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
-BuildRequires:	perl(Test)
+BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Carp)
 BuildRequires:	perl(DynaLoader)
 BuildRequires:	perl(Errno)
@@ -33,19 +33,19 @@ set or it can be determined if and which process currently holds the lock.
 To create a new object representing a flock structure call 'new()':
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -n %{modname}-%{modver} -p1
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor
-%make
+%__perl Makefile.PL INSTALLDIRS=vendor OPTIMIZE="%{optflags}"
+%make_build
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README Changes
-%{perl_vendorlib}/*
+%{perl_vendorarch}/*
 %{_mandir}/man3/*
