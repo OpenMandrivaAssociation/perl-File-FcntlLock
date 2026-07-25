@@ -4,12 +4,12 @@
 Summary:	File locking with fcntl()
 
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	9
+Version:	%{modver}
+Release:	10
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/File/%{modname}-%{modver}.tar.gz
+Url:		https://metacpan.org/dist/File-FcntlLock
+Source0:	https://cpan.metacpan.org/authors/id/J/JT/JTT/File-FcntlLock-%{modver}.tar.gz
 BuildRequires:	make
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(Test)
